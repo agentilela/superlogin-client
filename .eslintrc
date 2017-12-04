@@ -1,24 +1,15 @@
-parserOptions:
-    ecmaVersion: 6
-    sourceType: module
-
-env:
-    browser : true
-
-extends: airbnb-base
-
-rules:
-    no-tabs: 0
-    indent: [error, tab]
-    no-mixed-spaces-and-tabs: [error, smart-tabs]
-
-    no-underscore-dangle: off
-    comma-dangle: off
-
-    arrow-parens: [error, as-needed]
-    no-param-reassign: [error, { props: false }]
-
-    max-len:
-        - error
-        - 120
-        - { ignoreUrls: true, ignoreComments: false }
+{
+  "extends": ["airbnb-base", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "prefer-promise-reject-errors": "off",
+    "no-underscore-dangle": "off",
+    "no-param-reassign": ["error", { "props": false }]
+  }
+}
