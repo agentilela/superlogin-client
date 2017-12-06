@@ -563,7 +563,7 @@ class Superlogin extends EventEmitter2 {
       const _oauthWindow = window.open(url, options.windowName, options.windowOptions)
 
       if (!_oauthWindow) {
-        return reject({ error: 'Authorization popup blocked' })
+        return reject(new Error('Authorization popup blocked'))
       }
 
       const _oauthInterval = setInterval(() => {
@@ -571,7 +571,7 @@ class Superlogin extends EventEmitter2 {
           clearInterval(_oauthInterval)
           if (!this._oauthComplete) {
             this.authComplete = true
-            return reject({ error: 'Authorization failed' })
+            return reject(new Error('Authorization failed'))
           }
           return undefined
         }
@@ -579,7 +579,7 @@ class Superlogin extends EventEmitter2 {
           clearInterval(_oauthInterval)
           if (!this._oauthComplete) {
             this.authComplete = true
-            return reject({ error: 'Authorization cancelled' })
+            return reject(new Error('Authorization cancelled'))
           }
         }
         return undefined
@@ -598,7 +598,7 @@ class Superlogin extends EventEmitter2 {
             return resolve(`${capitalizeFirstLetter(link)} successfully linked.`)
           }
           this._oauthComplete = true
-          return reject(error)
+          return reject(new Error(error))
         }
         return undefined
       }
