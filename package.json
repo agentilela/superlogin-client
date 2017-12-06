@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint --ext .js src",
     "test": "npm run lint --silent",
-    "compile": "babel src --presets env,minify -d lib",
+    "compile": "babel src --presets env -d lib",
     "prepublish": "npm run compile"
   },
   "main": "lib/index.js",
