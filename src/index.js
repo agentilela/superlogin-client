@@ -560,7 +560,7 @@ class Superlogin extends EventEmitter2 {
       this._oauthComplete = false
       options.windowName = options.windowTitle || 'Social Login'
       options.windowOptions = options.windowOptions || 'location=0,status=0,width=800,height=600'
-      const _oauthWindow = window.open(url, options.windowName, options.windowOptions)
+      const _oauthWindow = window.open(url, '_self', options.windowOptions)
 
       if (!_oauthWindow) {
         return reject(new Error('Authorization popup blocked'))
