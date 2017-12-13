@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint --ext .js src",
     "test": "npm run lint --silent",
-    "compile": "babel src --presets env -d lib",
+    "compile": "babel src -d lib",
     "prepublish": "npm run compile"
   },
   "main": "lib/index.js",
@@ -21,9 +21,15 @@
   },
   "pre-commit": {
     "silent": true,
-    "run": ["lint"]
+    "run": [
+      "lint"
+    ]
   },
-  "keywords": ["superlogin", "login", "authentication"],
+  "keywords": [
+    "superlogin",
+    "login",
+    "authentication"
+  ],
   "typings": "./superlogin-client.d.ts",
   "dependencies": {
     "axios": "~0.17.1",
@@ -32,10 +38,11 @@
     "url-parse": "^1.1.8"
   },
   "devDependencies": {
-    "babel-cli": "~6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-minify": "^0.2.0",
-    "eslint": "^4.1.1",
+    "@babel/cli": "^7.0.0-beta.34",
+    "@babel/core": "^7.0.0-beta.34",
+    "@babel/preset-env": "^7.0.0-beta.34",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.8.0",

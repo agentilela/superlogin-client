@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "exclude": ["transform-regenerator"],
+        "loose": true,
+        "shippedProposals": true
+      }
+    ]
+  ],
+  "plugins": ["transform-class-properties"]
+}
